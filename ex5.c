@@ -19,22 +19,34 @@ d) percentual de pessoas com salário até R$100,00.
 O final da leitura de dados se dará com a entrada de um salário negativo.  
 */
 int main(){
-  float mediaSalPopu = 0, mediaNumFilhos = 0, maiorSalario = 0, percentAte100 = 0, salario = 0, valorTotalSalario = 0;
-  int numFilhos = 0, totalFilhos = 0, pessoas = 0, contadorSal100 = 0;
+  float mediaSalPopu = 0,
+        mediaNumFilhos = 0,
+        maiorSalario = 0,
+        percentAte100 = 0,
+        salario = 0, // dentro do loop vai ser sobrescrito -> temp
+        valorTotalSalario = 0; // vai ser incrementado dentro do loop
+
+  int numFilhos = 0,
+      totalFilhos = 0,//contador
+      pessoas = 0, //contador
+      contadorSal100 = 0;
 
   while(salario >= 0){
       printf("Digite seu salario -> ");
       scanf("%f", &salario);
-      if(salario < 0) break;
+     
+      if(salario < 0){
+        break; //nn é bom fazer isso
+      }
 
       printf("Digite a quantidade de filhos -> ");
       scanf("%d", &numFilhos);
 
-      totalFilhos += numFilhos; // incrementa o numero total de filhos
+      totalFilhos += numFilhos; //incrementa o numero total de filhos
 
-    if(salario > 0){ //para evitar que contabilize o salario mesmo ele sendo negativo
+    if(salario >= 0){ //para evitar que contabilize o salario mesmo ele sendo negativo
       valorTotalSalario += salario;
-      pessoas++;
+      pessoas++; //contador para fazer média
     }
 
     if(salario <= 100){
@@ -42,13 +54,20 @@ int main(){
     }
 
     if(salario > maiorSalario){
-      maiorSalario = salario;
+      maiorSalario = salario; // maiorSalario -> variavel aux 
+      //99 > maiorSalario
+      //ent maior salario recebe o 99
+      // ...
+      // ...
+      // ..
+      // 1000 > 99
+      // ent maior salrio recebe 1000
     }
   }
 
-  mediaNumFilhos = totalFilhos / pessoas; //calc media filhos
-  mediaSalPopu =  valorTotalSalario / pessoas; //calc media do salario
-  percentAte100 = contadorSal100 / (pessoas*1.0) * 100.0; //porcentagem de pessoas com salrio menor que cem
+  mediaNumFilhos = totalFilhos / (pessoas * 1.0); //calc media filhos
+  mediaSalPopu =  valorTotalSalario / (pessoas * 1.0); //calc media do salario
+  percentAte100 = contadorSal100 / (pessoas * 1.0) * 100.0; //porcentagem de pessoas com salrio menor que cem
 
   printf("A media do salario da populacao eh -> %.2f\n", mediaSalPopu);
   printf("A media de filhos da populacao eh  -> %.2f\n",mediaNumFilhos);
