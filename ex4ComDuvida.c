@@ -1,6 +1,6 @@
 /**
  * @file ex4.c
- * @author Breno Lopes(www.github.com/zTrolly)
+ * @author Breno Lopes (www.github.com/zTrolly)
  * @date 2022-04-03
  */
 

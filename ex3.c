@@ -16,7 +16,6 @@ ao final a quantidade de números divisíveis por 3 e 9, por 2 e por 5.
 int main(){
 int divisivel39=0, divisivel2=0, divisivel5=0;
 
-
 for (int i = 0; i < 10; i++)
 {
   printf("Digite um numero -> ");
