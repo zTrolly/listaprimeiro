@@ -37,3 +37,18 @@ int main()
 
   return 0;
 }
+
+/*
+
+WHILE(BATATA){
+  CODIGO
+}
+
+FOR(CONDICAO i < 10 ){
+  CODIGO
+  codigo2 codigo3
+
+}
+
+
+*/
